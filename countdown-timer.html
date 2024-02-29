@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Countdown Timer</title>
+        <link rel="stylesheet" href="timer.css">
+    </head>
+    <body style="height: 650px; width: 100%; display: flex; justify-content: center; align-items: normal;">
+        <div><img style="height: 600px; width: 700px; margin-top: 120px; margin-left: 30px; border-radius: 10px;" src="smxn5tnj.png" alt="IPHONE"></div>
+        <div style="margin-top: 120px; margin-right: 25px; padding: 10px;">
+            <h1 class="heading ">Iphone giveaway</h1>
+            <h2 class="description">Giveaway ends on Friday, March 10, 2024 at 12:00pm</h2>
+           <br>
+           <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Fugiat, ratione aperiam, sequi cumque obcaecati aliquid amet <br>nulla quod, officia perspiciatis nobis sed accusantium qui porro vitae odio nisi beatae praesentium. <br>rem ipsum dolor, sit amet consectetur adipisicing elit. Totam, esse a maiores quibusdam deleniti assumenda.</p>
+           <div class="Timer">
+            <div class="sub_timer">
+            <h3 id="Days" class="digit">10</h3>
+            <p class="digit_name">Days</p>
+        </div>
+        <div class="sub_timer">
+            <h3 id="Hours" class="digit">59</h3>
+            <p class="digit_name">Hours</p>
+        </div>
+        <div class="sub_timer">
+            <h3 id="Minutes" class="digit">59</h3>
+            <p class="digit_name">Minutes</p>
+        </div>
+        <div class="sub_timer">
+            <h3 id="Seconds" class="digit">59</h3>
+            <p class="digit_name">Seconds</p>
+        </div>
+      
+        
+        <script>
+            var endTime = new Date();
+            endTime.setDate(endTime.getDate());
+         var countdowndate = new Date("March 10, 2024 12:00:00 ").getTime();
+         var x = setInterval(function() {
+         var now = new Date().getTime();
+         var distance = countdowndate - now;
+         var Days = Math.floor(distance / (1000 * 60 * 60 * 24));
+         var  Hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
+         var Minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+         var Seconds = Math.floor((distance % (1000 * 60)) / 1000);
+               
+         document.getElementById('Days').innerHTML = Days;
+         document.getElementById('Hours').innerHTML = Hours;
+         document.getElementById('Minutes').innerHTML = Minutes;
+         document.getElementById('Seconds').innerHTML = Seconds;
+          if (distance < 0){
+             clearInterval(x);
+
+            document.getElementById("demo").innerHTML = "terminated"
+          }
+         }, 1000);
+                                                    
+         
+
+        </script>
+    </body>
+</html>
+
+        
